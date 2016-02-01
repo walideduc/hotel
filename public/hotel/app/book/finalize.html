@@ -2,27 +2,27 @@
     <div class="col s12 m6" ng-if="!reser_done">
         <div class="card blue-grey darken-1">
             <div class="card-content white-text">
-                <span class="card-title">Booking recap</span>
-                <p>Check-in  : {{start_dt}}</p>
-                <p>Check-out  : {{end_dt}}</p>
+                <span class="card-title">Récapitulation de réservation</span>
+                <p>Date d'arrivée  : {{start_dt}}</p>
+                <p>Date de départ  : {{end_dt}}</p>
                 <p>Passenger : {{occupancy}}</p>
-                <p>Room : {{room_info.name}}</p>
-                <p>Total price : {{room_info.total_price}}</p>
+                <p>Chambre : {{room_info.name}}</p>
+                <p>Prix total : {{room_info.total_price}}</p>
             </div>
         </div>
     </div>
     <div class="col s12 m6" ng-if="!reser_done">
         <div class="card-panel">
             <form >
-                <h4>Customer info</h4>
+                <h4>Client info</h4>
                 <div class="row">
                     <div class="input-field col s6">
                         <input  id="first_name" type="text" ng-model="customer.first_name" >
-                        <label for="first_name">First Name</label>
+                        <label for="first_name">Prénom</label>
                     </div>
                     <div class="input-field col s6">
                         <input id="last_name" type="text" ng-model="customer.last_name" >
-                        <label for="last_name">Last Name</label>
+                        <label for="last_name">Nom</label>
                     </div>
                 </div>
                 <div class="row">
@@ -31,7 +31,7 @@
                         <label for="email">Email</label>
                     </div>
                 </div>
-                <button class="btn" ng-click="book()">Book</button>
+                <button class="btn" ng-click="book()">Réserver</button>
             </form>
         </div>
     </div>
@@ -41,19 +41,19 @@
     <div class="col s12 m4 offset-m4" ng-if="reser_done">
         <div class="card blue darken-2">
             <div class="card-content white-text">
-                <span class="card-title"> <h2>Reservation Done</h2></span>
-                <h4>Customer info</h4>
-                <p>Name : {{reservation_info.customer.first_name}}</p>
-                <p>Last name : {{reservation_info.customer.last_name}}</p>
+                <span class="card-title"> <h2>Réservation prise en compte</h2></span>
+                <h4>Client info</h4>
+                <p>Prénom : {{reservation_info.customer.first_name}}</p>
+                <p>Nom : {{reservation_info.customer.last_name}}</p>
                 <p>Email : {{reservation_info.customer.email}}</p>
-                <h4>Reservation info</h4>
-                <p>Check-in : {{reservation_info.checkin}}</p>
-                <p>Check-out : {{reservation_info.checkout}}</p>
-                <p>Adults : {{reservation_info.occupancy}}</p>
-                <p>Total Price : {{reservation_info.total_price}}</p>
-                <h4>Nights info</h4>
+                <h4>Réservation info</h4>
+                <p>Date d'arrivée : {{reservation_info.checkin}}</p>
+                <p>Date de départ : {{reservation_info.checkout}}</p>
+                <p>Personnes : {{reservation_info.occupancy}}</p>
+                <p>Prix total : {{reservation_info.total_price}}</p>
+                <h4>Nuits info</h4>
                 <p ng-repeat="night in reservation_info.nights">
-                    Day {{night.day}}  -  Rate : {{night.rate}}
+                    Jour {{night.day}}  -  Prix : {{night.rate}}
                 </p>
             </div>
         </div>

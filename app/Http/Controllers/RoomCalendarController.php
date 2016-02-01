@@ -36,7 +36,7 @@ class RoomCalendarController extends Controller
             $i++;
         }
 
-        return response("Success updated ".$i." dates",200);
+        return response("Mis à jour avec succès de ".$i." dates",200);
     }
 
     public function searchAvailability(Request $request){
