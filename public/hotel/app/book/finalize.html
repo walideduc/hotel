@@ -55,6 +55,7 @@
                 <p ng-repeat="night in reservation_info.nights">
                     Jour {{night.day}}  -  Prix : {{night.rate}}
                 </p>
+                <a href='#/pay/{{reservation_info.id}}' style="text-align: center"><button class="btn">Pay {{reservation_info.total_price}} €</button></a>
             </div>
         </div>
     </div>

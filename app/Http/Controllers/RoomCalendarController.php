@@ -56,7 +56,7 @@ class RoomCalendarController extends Controller
                 ->where('room_type_id','=',$room_type->id)
                 ->where('availability','<=',0)->count();
 
-            if($count==0){
+            if($count == 0){
                 $total_price = RoomCalendar::where('day','>=',$start_dt)
                     ->where('day','<',$end_dt)
                     ->where('room_type_id','=',$room_type->id)

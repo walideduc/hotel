@@ -85,4 +85,8 @@ class ReservationController extends Controller
         return $reservation;
 
     }
+
+    public function show($id){
+        return Reservation::find($id)->toArray();
+    }
 }

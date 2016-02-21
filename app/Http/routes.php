@@ -37,6 +37,9 @@ Route::group(['prefix' => 'adminapi'], function()
 });
 
 Route::group(['prefix' => 'api'], function() {
+    Route::get('reservation/{id}','ReservationController@show');
     Route::post('searchavailabity', 'RoomCalendarController@searchAvailability');
     Route::post('createreservation', 'ReservationController@createReservation');
+    Route::post('payreservation','PaymentController@pay');
+
 });
